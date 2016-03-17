@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8"> 
+  <title></title>
+</head>
+  <style>
+   #val,#val1,#val2,#val3,#val4 {
+    width: 60px; 
+   } 
+  </style>
+<script  type="text/javascript">
+var m = new Array;
+function sort(){
+alert("1");
+
+
+
+var o = {
+    val: document.getElementById('val'), 
+    col: document.getElementById('val')
+}
+var o1 = {
+    val: document.getElementById('val1'), 
+    col: document.getElementById('val1')
+}
+
+var o2 = {
+    val: document.getElementById('val2'), 
+    col: document.getElementById('val2')
+}
+var o3 = {
+    val: document.getElementById('val3'), 
+    col: document.getElementById('val3')
+}
+var o4 = {
+    val: document.getElementById('val4'), 
+    col: document.getElementById('val4')
+}
+
+alert(o.val);
+alert(o.col.style.backgroundColor = "red");
+m = [o, o1, o2, o3, o4];
+
+	for (var i = 0; i < m.length; i++) {
+
+		var m_min = m[i].val.value;
+		alert(m_min);
+		m[i].col.style.backgroundColor = "blue";
+		
+		for (var j = i + 1; j < m.length; j++) {
+				alert(m[j].val.value);
+			if (m[j].val.value < Number(m_min)){
+				m[j].col.style.backgroundColor = "red";
+				alert("CHECK");
+				var mm = m[i].val.value;
+
+				m_min = m[j].val.value;
+
+				m[i].val.value = m_min;
+
+				m[j].val.value = mm;
+
+			}
+			m[i].col.style.backgroundColor = "white";
+			m[j].col.style.backgroundColor = "white";
+		}
+
+	}
+	for (var i = 0; i < m.length; i++) {
+		alert(m[i].val);
+	}
+}
+
+
+
+</script>
+<input type="Number" id="val" >
+<input type="Number" id="val1">
+<input type="Number" id="val2" >
+<input type="Number" id="val3" >
+<input type="Number" id="val4" >
+
+<form onkeypress="return event.charCode >= 40 && event.charCode <= 57 ">
+<input type="button" id="button_Sort" value="Шаг вперед" onClick="sort()">
+<input type="button" value="Сброс" onclick="location.reload()">
+</form>
+</br>
+
+
+</body>
+
+</html>
